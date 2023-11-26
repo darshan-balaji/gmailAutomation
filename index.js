@@ -62,11 +62,12 @@ function getAccessToken(oAuth2Client, callback) {
 function checkEmails(auth) {
   const gmail = google.gmail({ version: 'v1', auth });
 
-  // here I am creating a label for the automated message, note: I am yet to figure this part out as adding labels seems to be throwing errors
+  //here I am specifying the contents of the message that the script will send to new emails
   const vacationResponse = {
     subject: 'Automated Response',
     body: 'Thank you for your email. I am on vacation will get back to you as soon as possible!',
   };
+  // here I am creating a label for the automated message, note: I am yet to figure this part out as adding labels seems to be throwing errors
   const labelToAdd = 'missed';
 
   // List the user's messages
